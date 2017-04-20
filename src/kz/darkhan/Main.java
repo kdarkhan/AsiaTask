@@ -15,7 +15,7 @@ public class Main {
                     numbers.add(new NumWrapper(i * i));
                 }
 
-                AbstractNumbersPersister persister = FileBasedNumberPersister.getInstance();
+                AbstractNumbersPersister persister = XmlFileBasedNumberPersister.getInstance();
 
                 if (persister.persist(numbers)) {
                     System.out.println("Числа успешно сохранены в файловую систему");
@@ -23,7 +23,7 @@ public class Main {
                     System.out.println("Ошибка при сохранении чисел");
                 }
 
-                for (NumWrapper n: numbers) {
+                for (NumWrapper n : numbers) {
                     System.out.println(n.getNum());
                 }
             } catch (NumberFormatException e) {

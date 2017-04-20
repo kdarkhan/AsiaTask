@@ -8,7 +8,8 @@ public class FileBasedNumberPersister extends AbstractNumbersPersister {
 
     private static FileBasedNumberPersister instance = null;
 
-    private FileBasedNumberPersister() {}
+    private FileBasedNumberPersister() {
+    }
 
     public static FileBasedNumberPersister getInstance() {
         if (instance == null) {
