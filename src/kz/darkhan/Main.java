@@ -15,6 +15,14 @@ public class Main {
                     numbers.add(new NumWrapper(i * i));
                 }
 
+                AbstractNumbersPersister persister = FileBasedNumberPersister.getInstance();
+
+                if (persister.persist(numbers)) {
+                    System.out.println("Числа успешно сохранены в файловую систему");
+                } else {
+                    System.out.println("Ошибка при сохранении чисел");
+                }
+
                 for (NumWrapper n: numbers) {
                     System.out.println(n.getNum());
                 }
