@@ -15,6 +15,10 @@ public class Main {
                     numbers.add(new NumWrapper(i * i));
                 }
 
+                for (NumWrapper n : numbers) {
+                    System.out.println(n.getNum());
+                }
+
                 AbstractNumbersPersister persister = XmlFileBasedNumberPersister.getInstance();
 
                 if (persister.persist(numbers)) {
@@ -23,9 +27,7 @@ public class Main {
                     System.out.println("Ошибка при сохранении чисел");
                 }
 
-                for (NumWrapper n : numbers) {
-                    System.out.println(n.getNum());
-                }
+
             } catch (NumberFormatException e) {
                 System.out.println(String.format("Аргумент %s не является целым числом", args[0]));
             }
