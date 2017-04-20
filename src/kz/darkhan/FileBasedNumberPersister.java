@@ -6,8 +6,13 @@ import java.util.List;
 
 public class FileBasedNumberPersister extends AbstractNumbersPersister {
 
+    // Поля private и есть признак энкапсуляции
+    // их значения не доступны с наружних классов
+
     private static FileBasedNumberPersister instance = null;
 
+    // паттерн синглтон имплементируется путем закрытия доступа конструктору
+    // для кода снаружи
     private FileBasedNumberPersister() {
     }
 

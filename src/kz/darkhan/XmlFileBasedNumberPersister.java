@@ -49,7 +49,7 @@ public class XmlFileBasedNumberPersister extends AbstractNumbersPersister {
             transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 
             /*
-             Для подсчета размера XML на лету, я конвертирую каждый елемент в XML в цикле
+             Для подсчета размера XML на лету, я конвертирую каждый елемент в XML String в цикле
              Так как каждый элемент маленький, это не должно повлиять сильно на производительность
              Однако, нужно также учесть размер оборачивающего элемента <numbers>
              Поэтому изначально я начинаю не с нулевого каунтера
