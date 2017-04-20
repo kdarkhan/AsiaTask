@@ -1,5 +1,8 @@
 package kz.darkhan;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,10 +10,14 @@ public class Main {
             try {
                 Integer to = Integer.parseInt(args[0]);
                 System.out.println(String.format("Вы передали аргумент %d", to));
+                List<NumWrapper> numbers = new ArrayList<>();
                 for (int i = 1; i <= to; i++) {
-                    System.out.println(i * i);
+                    numbers.add(new NumWrapper(i * i));
                 }
 
+                for (NumWrapper n: numbers) {
+                    System.out.println(n.getNum());
+                }
             } catch (NumberFormatException e) {
                 System.out.println(String.format("Аргумент %s не является целым числом", args[0]));
             }
